@@ -1,0 +1,180 @@
+:root{ 
+    --dark-blue:hsl(240, 38%, 20%);
+    --grayish-blue:hsl(240, 18%, 77%);
+}
+
+*,
+*::before,
+*::after{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { 
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    background-image: url(images/pattern-curve.svg);
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 50%;
+}
+
+img{ 
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+button{ 
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+.slider{ 
+    width: 100%;
+    max-width: 60rem;
+    margin: 3rem auto 4rem;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 4rem;
+}
+
+.testmonial{ 
+    background-image: url(images/pattern-quotes.svg);
+    background-repeat: no-repeat;
+    background-position:  center 0;
+    background-size: 18%;
+    padding: 1.5rem;
+}
+
+.quote{ 
+    color: var(--dark-blue);
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-block-end: 1.5rem;
+}
+
+.info{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name{ 
+    color: var(--dark-blue);
+    font-weight: bold;
+    margin-block-end: .25rem;
+}
+
+.job{ 
+    color: var(--grayish-blue);
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.images{ 
+    padding-top: 5rem;
+    padding-inline: 3rem;
+    position: relative;
+    background-image: url(images/pattern-bg.svg);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center bottom;
+}
+
+.images .avatar{ 
+    max-width: 22rem;
+    max-height: 22rem;
+    filter: drop-shadow(0px 10px 500px rgba(0,0,0,0.3));
+}
+
+.btns{ 
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50% , 50%);
+}
+
+.btn{ 
+    background-color: #fff;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+}
+
+.prev{ 
+    border-radius: 50vw 0 0 50vw;
+}
+
+.next{ 
+    border-radius: 0 50vw 50vw 0;
+    margin-left: -0.5rem;
+}
+
+/*fade-in effect*/
+
+@keyframes fade-in{ 
+    to{ 
+        opacity: 1;
+    }
+}
+
+.fade-in{ 
+    opacity: 0.4;
+    animation: fade-in forwards ease-in-out 500ms 1;
+}
+
+@media(min-width:800px){ 
+    body{ 
+        text-align: left;
+    }
+ 
+    .slider{ 
+        flex-direction: row;
+        padding-inline: 3rem;
+        padding-inline-end: 0;
+        gap: 0;
+    }
+    .quote{ 
+        font-size: 1.5rem;
+        width: 32ch;
+    }
+    .info{ 
+        flex-direction: row;
+    }
+
+    .name{ 
+        margin-inline-end: 1rem;
+    }
+
+    .testmonial{ 
+        flex: 0.75;
+        align-self: center;
+        margin-right: -7.5rem;
+        z-index: 1000;
+    }
+
+    .images{ 
+        flex: 1;
+        padding: 3rem;
+        background-size: 100%;
+        background-position: center 40%;
+    }
+
+    .images .avatar{  
+        max-width: revert;
+        max-height: revert;
+        height: 100%;
+    }
+    
+    .btns{ 
+        left: 30%;
+        bottom: 3rem;
+    }
+}
